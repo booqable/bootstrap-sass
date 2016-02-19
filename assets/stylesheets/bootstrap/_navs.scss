@@ -106,7 +106,31 @@
   }
   // pulling this in mainly for less shorthand
   &.nav-justified {
-    @extend .nav-justified;
+    width: 100%;
+
+    > li {
+      float: none;
+      > a {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+    }
+
+    > .dropdown .dropdown-menu {
+      top: auto;
+      left: auto;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      > li {
+        display: table-cell;
+        width: 1%;
+        > a {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
     @extend .nav-tabs-justified;
   }
 }
